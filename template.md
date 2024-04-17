@@ -1,9 +1,78 @@
 # Term Name
 
-**Term**: `Enter the Git term here`
+**Term**: `Init`
 
-**Definition**: Provide a concise definition of the term. 
+**Definition**: Create an empty Git repository or reinitialize an existing one
+		Running git init in an existing repository is safe. 
+		It will not overwrite things that are already there. 
+		The primary reason for rerunning git init is to pick up newly added templates 
+		(or to move the repository to another place if --separate-git-dir is given). 
 
-**Example**: Describe the scenario or provide an example where this Git term might be applicable. 
+**Example**: You create a new folder for a project and want to initialize your git repository. 
 
-**Code Snippet**: If applicable, include a code snippet that demonstrates how the term is used in practice, and what are typical variants (e.g. mentioning the flags that are used).
+**Code Snippet**: cd <Your Folder> , git init -flag
+
+		git init [-q | --quiet] [--bare] [--template=<template-directory>]
+	  	[--separate-git-dir <git-dir>] [--object-format=<format>]
+	  	[--ref-format=<format>]
+	  	[-b <branch-name> | --initial-branch=<branch-name>]
+	  	[--shared[=<permissions>]] [<directory>]
+
+OPTIONS
+
+-q
+--quiet
+
+ Only print error and warning messages; all other output will be suppressed.
+--bare
+
+Create a bare repository. If GIT_DIR environment is not set, it is set to the current working directory.
+--object-format=<format>
+
+    Specify the given object format (hash algorithm) for the repository. The valid values are sha1 and (if enabled) sha256. sha1 is the default.
+
+    Note: At present, there is no interoperability between SHA-256 repositories and SHA-1 repositories.
+
+Historically, we warned that SHA-256 repositories may later need backward incompatible changes when we introduce such interoperability features. Today, we only expect compatible changes. Furthermore, if such changes prove to be necessary, it can be expected that SHA-256 repositories created with today’s Git will be usable by future versions of Git without data loss.
+
+--ref-format=<format>
+
+    Specify the given ref storage format for the repository. The valid values are:
+
+        files for loose files with packed-refs. This is the default.
+
+--template=<template-directory>
+
+    Specify the directory from which templates will be used. (See the "TEMPLATE DIRECTORY" section below.)
+--separate-git-dir=<git-dir>
+
+    Instead of initializing the repository as a directory to either $GIT_DIR or ./.git/, create a text file there containing the path to the actual repository. This file acts as a filesystem-agnostic Git symbolic link to the repository.
+
+    If this is a reinitialization, the repository will be moved to the specified path.
+-b <branch-name>
+--initial-branch=<branch-name>
+
+    Use the specified name for the initial branch in the newly created repository. If not specified, fall back to the default name (currently master, but this is subject to change in the future; the name can be customized via the init.defaultBranch configuration variable).
+--shared[=(false|true|umask|group|all|world|everybody|<perm>)]
+
+    Specify that the Git repository is to be shared amongst several users. This allows users belonging to the same group to push into that repository. When specified, the config variable "core.sharedRepository" is set so that files and directories under $GIT_DIR are created with the requested permissions. When not specified, Git will use permissions reported by umask(2).
+
+    The option can have the following values, defaulting to group if no value is given:
+
+    umask (or false)
+
+        Use permissions reported by umask(2). The default, when --shared is not specified.
+    group (or true)
+
+        Make the repository group-writable, (and g+sx, since the git group may not be the primary group of all users). This is used to loosen the permissions of an otherwise safe umask(2) value. Note that the umask still applies to the other permission bits (e.g. if umask is 0022, using group will not remove read privileges from other (non-group) users). See 0xxx for how to exactly specify the repository permissions.
+    all (or world or everybody)
+
+        Same as group, but make the repository readable by all users.
+    <perm>
+
+        <perm> is a 3-digit octal number prefixed with 0 and each file will have mode <perm>. <perm> will override users' umask(2) value (and not only loosen permissions as group and all do). 0640 will create a repository which is group-readable, but not group-writable or accessible to others. 0660 will create a repo that is readable and writable to the current user and group, but inaccessible to others (directories and executable files get their x bit from the r bit for corresponding classes of users).
+
+By default, the configuration flag receive.denyNonFastForwards is enabled in shared repositories, so that you cannot force a non fast-forwarding push into it.
+
+If you provide a directory, the command is run inside it. If this directory does not exist, it will be created.
+
