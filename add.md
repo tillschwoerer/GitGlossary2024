@@ -1,19 +1,27 @@
-# Term Name
+# Git Commit
 
-**Term**: `Git`
+## Definition
 
-**Definition**: `Definition: Git is a distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It is easy to learn and has a tiny footprint with lightning fast performance. It was created by Linus Torvalds in 2005 for development of the Linux kernel.`
+A `commit` in the context of Git is an individual change to a file (or set of files). It's essentially a snapshot of your project at a certain point in time. Each commit in Git has a unique ID (a hash) that allows you to keep record of what changes were made, when, and by who. Commits usually contain a commit message which is a brief description of what changes were made.
 
-**Example**: Git is used in software development to track changes in the source code. It allows multiple developers to work on the same project simultaneously, each on their own "branch" of the code. Developers can then merge their changes back into the main "master" branch when they are ready. 
+## Example
 
-**Code Snippet**: Code Snippet: Here are some basic Git commands:
+When working on a software project, you might make changes to several files to add a new feature. Once you've tested your changes and are satisfied with them, you can commit those changes. This creates a new commit in your Git history that represents the state of your project at that point in time.
 
-git init: Initializes a new Git repository.
-git clone <repository>: Creates a copy of a remote repository on your local machine.
-git add <file>: Stages a file for commit.
-git commit -m "Commit message": Commits the staged changes with a descriptive message.
-git push origin <branch>: Pushes committed changes to a remote repository.
-git pull origin <branch>: Fetches and merges changes from a remote repository to your local branch.
-git branch <branch>: Creates a new branch.
-git checkout <branch>: Switches to a different branch.
-git merge <branch>: Merges changes from one branch into another.
+## Code Snippet
+
+Here are some basic Git commands related to commits:
+
+- `git commit -m "Your descriptive message here"`: This command creates a new commit with the changes you've staged using `git add`, and includes a descriptive message of your choice.
+
+- `git log`: This command shows a list of all the commits in the current branch's history.
+
+- `git show <commit-hash>`: This command shows the changes made in the commit with the specified hash.
+
+- `git revert <commit-hash>`: This command creates a new commit that undoes the changes made in the commit with the specified hash.
+
+## Related Terms
+
+- Git: A distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+- Repository: A directory where Git has been initialized to start version controlling your files.
+- Branch: A parallel version of a repository. It is contained within the repository, but does not affect the primary or master branch allowing you to work freely without disrupting the "live" version. When you've made the changes you want to make, you can merge your branch back into the master branch to publish your changes.
