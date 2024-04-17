@@ -11,12 +11,12 @@ This repository is a collaborative project created for the purpose of learning a
 
 ### Making Contributions
 
-- **Create a New Branch**: Create a branch for your specific contribution. Name it after the git term you are explaining, e.g., `git branch git-add`.
-- **Switch to New Branch**: Switch to your branch, e.g. `git switch git-add`.
-- **Copy the Template**: You'll find a `template.md` in the directory. Copy this file and rename it according to the term you are documenting, e.g., `git-add.md`.
+- **Create a New Branch**: Create a branch for your specific contribution. Name it after the git term you are explaining, e.g., `git branch add`.
+- **Switch to New Branch**: Switch to your branch, e.g. `git switch add`.
+- **Copy the Template**: You'll find a `template.md` in the directory. Copy this file and rename it according to the term you are documenting, e.g., `add.md`.
 - **Edit the File**: Follow the format specified in `template.md` to fill out your term, definition, example, and code snippet.
 - **Commit Your Changes**: Commit your changes with a clear message, e.g., "Add definition for <term>".
-- **Push Your Changes**: Push your branch to your GitHub fork. Note if you are pushing a branch for the first, you need to use the --set-upstream flag, e.g., `git push --set-upstream origin git-add`. For follow-up pushes, you can simply use `git push`. 
+- **Push Your Changes**: Push your branch to your GitHub fork. Note if you are pushing a branch for the first, you need to use the --set-upstream flag, e.g., `git push --set-upstream origin add`. For follow-up pushes, you can simply use `git push`. 
 - **Submit a Pull Request**: Go to your Githut fork, and make a pull request to the main repository for integration and review.
 
 ### Review Process and Merging
