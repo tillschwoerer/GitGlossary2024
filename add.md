@@ -14,11 +14,6 @@ Here are some basic Git commands related to commits:
 
 - `git commit -m "Your descriptive message here"`: This command creates a new commit with the changes you've staged using `git add`, and includes a descriptive message of your choice.
 
-- `git log`: This command shows a list of all the commits in the current branch's history.
-
-- `git show <commit-hash>`: This command shows the changes made in the commit with the specified hash.
-
-- `git revert <commit-hash>`: This command creates a new commit that undoes the changes made in the commit with the specified hash.
 
 ## Related Terms
 
