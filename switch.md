@@ -35,3 +35,5 @@ Switched to a new branch 'fixup'
 
 You can grow a new branch from any commit.  
 This code snippet creates a new branch "fixup" by switching with "HEAD~3", which means that it is working on commit that is 3 commits relative to the current HEAD.  
+
+Link: https://git-scm.com/docs/git-switch  
